@@ -1,0 +1,74 @@
+
+<!-- emptycart -->
+<div class="container" *ngIf="emsg">
+  <div><h1>Your wishlis</h1> </div>
+  <div class="line"></div>
+  <div>Your wishlist is currently empty</div>
+  <button routerLink="/" style="margin-top:60px;margin-bottom: 60px;" type="button">continue Shopping</button>
+  </div>
+
+<!-- wishlist content -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>title</th>
+            <th>price</th>
+            <th>delete</th>
+            <th>cart</th>
+           
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let page of wishlist">
+            <th><img style="width: 200px;" [src]="page.cover_image"></th>
+            <th>{{page.title}}</th>
+            <th>{{page.price}}</th>
+
+            <th> 
+
+                        <button class="btn btn-outline-dark mt-auto" (click)="deletewish(page)"><i class="fa fa-trash"></i></button>&nbsp;</th>
+                        <th><button class="btn btn-outline-success mt-auto" (click)="addcart(page)"><i class="fa fa-cart-plus"></i></button></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- <section class="py-5" >
+  <div class="container px-4 px-lg-5 mt-5"  >
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
+          <div class="col mb-5" *ngFor="let page of wishlist">
+              <div class="card h-100"> -->
+                  <!-- Product image-->
+                  <!-- <img class="card-img-top" [src]="page.cover_image" alt="..." /> -->
+                  <!-- Product details-->
+                  <!-- <div class="card-body p-4">
+                      <div class="text-center"> -->
+                          <!-- Product name-->
+                          <!-- <h5 class="fw-bolder">{{page.title}}</h5> -->
+                          <!-- Product price-->
+                          <!-- ${{page.price}}
+                      </div>
+                  </div> -->
+                  <!-- Product actions-->
+                  <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> -->
+                      <!-- <div class="text-center">
+
+                        <button class="btn btn-outline-dark mt-auto" (click)="deletewish(page)"><i class="fa fa-trash"></i></button>&nbsp;
+                        <button class="btn btn-outline-success mt-auto" (click)="addcart(page)"><i class="fa fa-cart-plus"></i></button></div> -->
+                  <!-- </div> -->
+
+              <!--  </div>
+          </div>
+      </div>
+     </div>
+      -->

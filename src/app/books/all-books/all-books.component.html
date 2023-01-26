@@ -1,0 +1,90 @@
+
+
+
+
+<div class="box">
+  <div class="font">the bookstore gives you life!</div>
+
+     <img style="width:100%;height:600px" src="https://images.unsplash.com/photo-1452882628481-6a2da9481239?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" >
+     <div class="text-block">
+
+     <h4><b>Explore the world through books</b></h4>
+     <p> <b>Tap to see how</b></p>
+   </div>
+
+   <div class="bton">
+  <button class="btn btn-dark" routerLink="">Shop Now</button>&nbsp;
+
+  <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My account</button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">My bokstrore</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form action="">
+    <input (change)="emailChange($event)" type="email" name="email" class="form-control marg" placeholder="Enter your Email">&nbsp;&nbsp;
+    <input (change)="pswdChange($event)" type="text" name="password" class="form-control" placeholder="password">
+
+    <button (click)="login()"  class="btn btn-dark" id="bbton" >login</button>
+  </form>
+  </div>
+
+
+  <a id="link" routerLink="../regster"> dont have account? sign up</a>
+
+
+
+</div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<input class="search" (keyup)=" search($event)" type="text" placeholder="search">
+<div class="sell"><h3>
+  BEST SELLERS  and
+  FEATUARED</h3>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam consequatur eius commodi alias, quae exercitationem ducimus nesciunt
+</div>
+<!-- <pre>{{allbooks | json }}</pre> -->
+
+
+
+
+<div class="container">
+  <div class=" row gx-4 gx-lg-5 row-cols-3 row-cols-md-3 row-cols-xl-2 justify-content-center">
+  <div *ngFor="let page of allbooks | filter: searchterm: 'title'" class="col mb-5">
+  <div class="card">
+    <div class="imgBx">
+      <img [src]="page.cover_image">
+    </div>
+
+    <div class="contentBx">
+
+      <div class="size">
+
+        <span> </span>
+
+      </div>
+      <div class="color">
+
+        <span></span>
+
+      </div>
+      <a (click)="addtowishlist(page)" class="btn btn-outline-light mt-auto"><i class="fa fa-heart"></i> </a>&nbsp;
+     <a (click)="addcart(page)" class="btn btn-outline-light mt-auto"><i class="fa fa-cart-plus"></i></a>
+    </div>
+
+  </div>
+  <h6 class="margn">{{page.title}}</h6>
+  <div class="line"></div>
+</div>
+</div>
+</div>

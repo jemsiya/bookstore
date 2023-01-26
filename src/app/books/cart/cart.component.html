@@ -1,0 +1,43 @@
+
+<!-- emptycart -->
+<div class="container" *ngIf="cartitem.length==0">
+<div><h1>Your cart</h1> </div>
+<div class="line"></div>
+<div>Your cart is currently empty</div>
+<button routerLink="/" style="margin-top:60px;margin-bottom: 60px;" type="button">continue Shopping</button>
+</div>
+
+<!--content -->
+
+<div class="container" *ngIf="cartitem!=0">
+  <div class="row">
+    <div class="col">
+      <table class="table border border-dark">
+
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>image</th>
+            <th>action</th>
+            <th>price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let page of cartitem let i=index">
+           <td>{{i+1}}</td>
+           <td>{{page.title}}</td>
+           <td><img [src]="page.cover_image"></td>
+           <td> <i class="fa fa-trash"  ></i></td>
+           <td>{{page.price}}</td>
+           <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <b>grand sum:{{grand}}</b>
+
+
+    </div>
+  </div>
+</div>
+
